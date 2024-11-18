@@ -1,0 +1,89 @@
+/* Explanation:
+Question Struct:
+A struct named Question is created to hold each question, its options, and the correct answer index.
+Quiz Data:
+The quiz is stored as a vector of Question objects.
+Game Logic:
+The game loops through each question, displays it, and accepts user input.
+It compares the user’s choice with the correct answer and updates the score accordingly.
+*/
+
+
+
+
+
+
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+struct Question {
+    string text;
+    vector<string> options;
+    int correctOption;
+};
+
+void displayQuestion(const Question& q, int questionNumber) {
+    cout << "\nQuestion " << questionNumber << ": " << q.text << endl;
+    for (size_t i = 0; i < q.options.size(); ++i) {
+        cout << i + 1 << ". " << q.options[i] << endl;
+    }
+    cout << "Enter your choice (1-" << q.options.size() << "): ";
+}
+
+int main() {
+    vector<Question> quiz = {
+        {"What is the capital of France?",
+         {"Berlin", "Madrid", "Paris", "Rome"},
+         3},
+        {"What is 2 + 2?",
+         {"3", "4", "5", "6"},
+         2},
+        {"Which programming language is used for iOS app development?",
+         {"Java", "Swift", "Python", "C++"},
+         2},
+        {"Which planet is known as the Red Planet?",
+         {"Earth", "Mars", "Jupiter", "Venus"},
+         2},
+        {"Who wrote 'To Kill a Mockingbird'?",
+         {"Harper Lee", "J.K. Rowling", "George Orwell", "Mark Twain"},
+         1}
+    };
+
+    int score = 0;
+
+    cout << "Welcome to the Quiz Game!\n";
+    cout << "There are " << quiz.size() << " questions.\n";
+    cout << "Answer each question by typing the number of your choice.\n";
+
+    for (size_t i = 0; i < quiz.size(); ++i) {
+        displayQuestion(quiz[i], i + 1);
+
+        int userChoice;
+        cin >> userChoice;
+
+        if (userChoice == quiz[i].correctOption) {
+            cout << "Correct!\n";
+            score++;
+        } else {
+            cout << "Wrong. The correct answer was: "
+                 << quiz[i].options[quiz[i].correctOption - 1] << endl;
+        }
+    }
+
+    cout << "\nQuiz Over!\n";
+    cout << "Your final score: " << score << " out of " << quiz.size() << endl;
+
+    if (score == quiz.size()) {
+        cout << "Excellent work! You're a quiz master!\n";
+    } else if (score >= quiz.size() / 2) {
+        cout << "Good job! You passed the quiz.\n";
+    } else {
+        cout << "Better luck next time. Keep learning!\n";
+    }
+
+    return 0;
+}
