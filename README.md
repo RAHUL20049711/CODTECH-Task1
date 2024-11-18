@@ -1,14 +1,14 @@
 # CODTECH-Task1
-NAME: RAHUL SHARMA
-ID:CT08DS8652
-DOMAIN:C++ PROGRAMMING
-DURATION: OCTOBER TO NOVEMBER 2024
-MENTOR: MUZAMMIL
+**NAME:** RAHUL SHARMA
+**ID:**CT08DS8652
+**DOMAIN:**C++ PROGRAMMING
+**DURATION:** OCTOBER TO NOVEMBER 2024
+**MENTOR:** MUZAMMIL
 
-##Overview of the Quiz Game Project
+## Overview of the Quiz Game Project
 This project implements a simple multiple-choice quiz game in C++. It is designed to test the user’s knowledge across various topics by presenting a series of questions, collecting responses, and providing immediate feedback. At the end of the game, the user’s performance is evaluated based on their score.
 
-Key Features
+### Key Features
 Interactive Question-Answering:
 
 The user answers each question by selecting from multiple-choice options.
